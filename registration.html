@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>RegistracijaGF</title>
+	<link rel="stylesheet" type="text/css" href="stil.css">
+	<!-- link to JS -->	
+</head>	
+<body>
+	<div class="bigBanner">
+		<div class="prijavaUporabnika">
+			<form method = "get" action="registration.html">
+			<input type="text" name="name" required placeholder="Uporabnisko ime"></input>
+			<input type="password" name="password" required placeholder="Geslo" maxlength=20></input>
+			<input type = "submit" value = "Prijava" />
+			</form>
+		</div>
+	</div>
+	
+	<div class="registration">
+		<form method = "get" action="registration.html">
+			Uporabniško ime:  <br />
+			<input type="text" name="name" required size=50/><br />
+			Geslo:  <br />
+			<input type="password" name="password" required size=50/><br />
+			<label>E-mail:  <br />
+			<input type = "email" placeholder = "name@domain.com" required size=50/>
+			</label><br/>
+			<input type = "submit" value = "Send" />
+			<input type = "reset" value = "Clear" />
+		</form>
+	</div>
+	
+</body>
+</html>

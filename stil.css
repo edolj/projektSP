@@ -1,0 +1,65 @@
+div.prijavaUporabnika {
+	padding-right: 10px;
+	text-align: right;
+}
+
+div.registration {
+	border: solid;
+	border-color: red;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+div.bigBanner {			
+	padding-top: 10px;
+	border-style: thin;
+	background-color: darkgray;
+	padding-bottom: 10px;
+}
+
+/*div.osnovniMenu {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 250px;
+	border-style: solid;
+}
+
+ul.a {
+	font-family: serif;
+	font-size: large;
+	font-weight: bold;
+	text-decoration: underline;
+	list-style-type: circle;
+}*/
+
+div.osnovniMenu {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	width: 250px;
+}
+	
+ul.prviMenu {
+padding-top: 20px;
+padding-right: 20px;
+padding-bottom: 10px;
+background: #efefef;
+background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
+background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+box-shadow: 10px 0px 20px rgba(0,0,0,0.15); padding: 5 20px; border-radius: 20px;
+list-style: circle; position: relative; display: inline-table;
+font-family: serif;
+font-size: large;
+font-weight: bold;
+border-style: groove;
+}
+
+li:hover { 
+background: lightgray;
+box-shadow: 10px 0px 20px rgba(0,0,0,0.15); padding: 5 20px; border-radius: 20px;
+font-size: 20px;
+}
