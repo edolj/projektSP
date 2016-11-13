@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <head>
 	<meta charset="UTF-8">
 	<title>RegistracijaGF</title>
@@ -6,29 +6,32 @@
 	<!-- link to JS -->	
 </head>	
 <body>
-	<div class="bigBanner">
-		<div class="prijavaUporabnika">
-			<form method = "get" action="registration.html">
-			<input type="text" name="name" required placeholder="Uporabnisko ime"></input>
-			<input type="password" name="password" required placeholder="Geslo" maxlength=20></input>
-			<input type = "submit" value = "Prijava" />
-			</form>
-		</div>
-	</div>
 	
-	<div class="registration">
-		<form method = "get" action="registration.html">
-			Uporabniško ime:  <br />
-			<input type="text" name="name" required size=50/><br />
-			Geslo:  <br />
-			<input type="password" name="password" required size=50/><br />
-			<label>E-mail:  <br />
-			<input type = "email" placeholder = "name@domain.com" required size=50/>
-			</label><br/>
-			<input type = "submit" value = "Send" />
-			<input type = "reset" value = "Clear" />
-		</form>
-	</div>
+	<div class="regForm">	
+		<img src="LogoGF.JPG" style="display: block;margin-left: auto;margin-right: auto">
+	 <form>
+	   <table style="margin: 0 auto; padding-bottom: 20px;">
+        <tr>
+         <td>Uporabniško ime:</td> <td><input type="text" name="name" size=30 maxlength=50 placeholder = "ime" required></td><br>
+        </tr>
+        <tr>
+         <td>Email:</td> <td><input type = "email" placeholder = "name@domain.com" size=30 required /></td><br>
+        </tr>
+        <tr>
+         <td>Geslo:</td> <td><input type="password" name="pwd" size=30 required></td><br>
+        </tr>
+        <tr>
+         <td>Potrdi geslo:</td> <td><input type="password" name="cpwd" size=30 required></td><br>
+        </tr>
+		<tr>
+		 <td><label class="no-fixed-width"><input type="checkbox" required />Nisem robot</label></td><br>	
+		</tr>
+        <tr>
+         <td><input type="submit" value="Ustvari račun"></td>
+        </tr>
+       </table>
+      </form>
+	</div>  
 	
 </body>
 </html>
