@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>AddGF</title>
+	<link rel="stylesheet" type="text/css" href="stil.css">
+	<script src="script.js"></script>
+</head>	
+
+<body>
+	<header>
+	<div class="bigBanner centered-content">
+		<div class="prijavaUporabnika">
+			<form action="index.html" method="get">
+			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required></input>
+			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required></input>
+			<input type="submit" value="Prijava" onclick="showUser();"></input><br><br>
+			</form>
+			<label> Nisi registriran? <label>
+			<a href="registration.html"><button type="button">Registracija</button></a>
+		</div>
+		<div class="setLogo"><img src="LogoGF.JPG"></div>
+	</div>
+	</header>
+	
+	<div class="main-container centered-content">
+	
+	<div class="osnovniMenu">
+		<b><span id="prijavljen"></span></b>
+		<ul id="prviMenu">
+			<a href="novice.html"><li> Novice </li></a><br>
+			<a href="novaNaprava.html"><li> Objava nove naprave </li></a><br>
+			<a href="index.html"><li> Priljubljeno </li></a><br>
+			<a href="index.html"><li> Forum </li></a><br>
+		</ul>
+	</div>
+	
+	<br>
+	
+	<div class="glavnoOkno" id="mainOkno">
+		<!--<form action="novaNaprava.html" method="get" onsubmit="dodajNapravo()">-->
+		<form action="index.html" method="get" class="objava">
+			<h2> Vpis vsebine naprave </h2>
+			<div>
+				<label>Ime naprave:</label> <br>
+				<input type="text" id="id_naprave" maxlength=60 required> </input><br>
+			</div>
+			<div>	
+				<label>Tehnične lastnosti:</label> <br>
+				<table id="id_tech">
+				<tr><td><input name="ts" type="text" maxlength=60></input></td></tr>
+				<tr><td><input name="ts" type="text" maxlength=60></input></td></tr>
+				<tr><td><input name="ts" type="text" maxlength=60></input></td></tr>
+				<tr><td><input name="ts" type="text" maxlength=60></input></td></tr>
+				<tr><td><input name="ts" type="text" maxlength=60></input></td></tr>
+				</table>
+			</div>
+			<div>	
+				<label>Dodaten opis:</label> <br>
+				<textarea id="dodatenOpis"></textarea> <br>
+			</div>
+			<div>	
+				<label>Dodajte fotografijo:</label> <br>
+				<input type="file" name="pic" accept="image/*"></input> <br>
+			</div>
+			<div>	
+				<label>Dodajte video:</label> <br>
+				<input type="file" name="vid" accept="video/*"></input> <br>
+			</div>
+			<div>	
+				<!--<input type="submit"></input>-->	
+				<button type="button" onclick="dodajNapravo()"> Prikazi </button>
+			</div>
+		</form>
+	</div>
+	
+	</div>
+	
+	<footer>
+      <div class="footer centered-content">
+		<div class="footer-links">
+		<a href="index.html"> Domača stran </a> |
+        <a href="novice.html"> Novice </a>
+		</div>
+	  </div>
+    </footer>
+	
+	</body>
+</html>

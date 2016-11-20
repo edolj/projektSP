@@ -3,7 +3,7 @@ body {
 }
 
 header label {
-  color: blue;
+  color: yellow;
 }
 
 .centered-content {
@@ -13,7 +13,7 @@ header label {
 }
 
 .main-container {
-  min-height:1000px;
+  display:flex;
   background:lightgray;
 }
 
@@ -70,15 +70,21 @@ div.regForm {
 	padding-top: 10px;
 }
 
+div.regForm input {
+	font: 1em sans-serif;
+}
+
+div.regForm input:focus {
+    border-color: #000;
+}
+
 div.osnovniMenu {
 	float: left;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 10px;
+	margin:10px; 
 	width: 20%;
 }
 	
-ul.prviMenu {
+#prviMenu {
 	padding-top: 20px;
 	padding-right: 20px;
 	padding-bottom: 10px;
@@ -101,9 +107,75 @@ li:hover {
 }
 
 div.glavnoOkno {
-	border: solid;
+	display: inline-block;
+	flex-grow:1;
+	margin-top:10px;
+	margin-bottom:10px;
 	width: 75%;
 	float: right;
 	margin-right: 10px;
 	min-height:960px;
+	background: #efefef;
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
+	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); padding: 5 20px; border-radius: 20px;
+}
+
+div.dataContainer {
+	margin:5px;
+	padding:10px;
+	display:flex;
+	flex-flow:row;
+	flex-grow:1;
+}
+
+div.dataContainer:hover {
+    background: darkgray;
+	cursor: pointer;
+}
+
+div.dataEl {
+	margin-left: 10px;
+}	
+
+h3 {
+	padding-left:10px;	
+}
+
+form.objava {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+	box-shadow: 10px 0px 20px rgba(0,0,0,0.15);
+}
+
+form.objava div + div {
+	margin-top: 1em;
+}
+
+form.objava input, textarea {
+    font: 1em sans-serif;
+    width: 400px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+
+form.objava input:focus, textarea:focus {
+    border-color: #000;
+}
+
+form.objava textarea {
+    vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
+
+form.objava button {
+	color: red;
+	width: 100px;
+	height: 50px;
 }

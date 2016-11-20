@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>NewsGF</title>
+	<link rel="stylesheet" type="text/css" href="stil.css">
+	<script src="script.js"></script>
+</head>	
+
+<body>
+	<header>
+	<div class="bigBanner centered-content">
+		<div class="prijavaUporabnika">
+			<form action="index.html" method="get">
+			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required></input>
+			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required></input>
+			<input type="submit" value="Prijava" onclick="showUser();"></input><br><br>
+			</form>
+			<label> Nisi registriran? <label>
+			<a href="registration.html"><button type="button">Registracija</button></a>
+		</div>
+		<div class="setLogo"><img src="LogoGF.JPG"></div>
+	</div>
+	</header>
+	
+	<div class="main-container centered-content">
+	
+	<div class="osnovniMenu">
+		<b><span id="prijavljen"></span></b>
+		<nav>
+		<ul id="prviMenu">
+			<a href="novice.html"><li> Novice </li></a><br>
+			<a href="novaNaprava.html"><li> Dodaj novo napravo </li></a><br>
+			<a href="index.html"><li> Priljubljeno </li></a><br>
+			<a href="index.html"><li> Forum </li></a><br>
+		</ul>
+		</nav>
+	</div>
+	
+	<br>
+	
+	<div class="glavnoOkno">
+		<section>
+			<h2 style="color:Blue; text-align:center">Novice</h2>
+			<article style="padding: 20px;">
+				<h2>Apple iOS 10 and macOS Sierra Release Dates Announced</h2>
+				<p> At the iPhone 7 and iPhone 7 Plus smartphone launch in San Francisco, Apple announced the release dates of its latest 
+					operating system for mobile – iOS 10 and that of Mac computers – macOS...</p>
+				<a href="http://thegadgetsfreak.com/apple-ios-10-macos-sierra-release-dates-announced/">Preberi več</a>					
+				<p style="text-align:right;">Objavil E.L. dne <time datetime="2016-09-08"> 8. september, 2016</time>.</p>
+			</article>
+			<article style="padding: 20px;">
+				<h2>Lenovo Miix 710: 12-inch Tablet with Intel Kaby Lake, 9 hrs Battery Life</h2>
+				<p> Without any prior special announcement, Lenovo has listed up the Miix 710,
+					a more powerful version of its Lenovo Miix 700 2-in-1 hybrid tablet on its 
+					official website. The sleek looking Lenovo Miix 710 was...</p>
+				<a href="http://thegadgetsfreak.com/lenovo-miix-710-12-inch-tablet-intel-kaby-lake-9-hrs-battery-life/">Preberi več</a>	
+				<p style="text-align:right;">Objavil E.L. dne <time datetime="2016-09-24"> 24. september, 2016</time>.</p>
+			</article>
+		</section>
+	</div>
+	
+	</div>
+	
+	<footer>
+      <div class="footer centered-content">
+		<div class="footer-links">
+		<a href="index.html"> Domača stran </a> |
+        <a href="novice.html"> Novice </a>
+		</div>
+	  </div>
+    </footer>
+	
+	</body>
+</html>

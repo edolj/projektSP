@@ -3,16 +3,18 @@
 	<meta charset="UTF-8">
 	<title>GadgetFreak</title>
 	<link rel="stylesheet" type="text/css" href="stil.css">
-	<!-- link to JS -->	
+	<script src="script.js"></script>
 </head>	
 
 <body>
 	<header>
 	<div class="bigBanner centered-content">
 		<div class="prijavaUporabnika">
-			<input type="text" placeholder="Uporabnisko ime"></input>
-			<input type="password" placeholder="Geslo" maxlength=20></input>
-			<button type="button">Prijava</button><br><br>
+			<form action="index.html" method="get">
+			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required></input>
+			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required></input>
+			<input type="submit" value="Prijava" onclick="showUser();"></input><br><br>
+			</form>
 			<label> Nisi registriran? <label>
 			<a href="registration.html"><button type="button">Registracija</button></a>
 		</div>
@@ -23,18 +25,65 @@
 	<div class="main-container centered-content">
 	
 	<div class="osnovniMenu">
-		<ul class="prviMenu">
-			<a href="index.html"><li> Dodaj novo napravo </li></a><br>
+		<b><span id="prijavljen"></span></b>
+		<nav>
+		<ul id="prviMenu">
+			<a href="novice.html"><li> Novice </li></a><br>
+			<a href="novaNaprava.html"><li> Objava nove naprave </li></a><br>
 			<a href="index.html"><li> Priljubljeno </li></a><br>
-			<a href="index.html"><li> O nas	</li></a><br>
 			<a href="index.html"><li> Forum </li></a><br>
 		</ul>
+		</nav>
 	</div>
 	
 	<br>
 	
-	<div class="glavnoOkno">
-		
+	<div class="glavnoOkno" id="mainOkno">
+		<div class="dataContainer">
+			<figure>
+			<img src="iphone6.jpg" height="160" width="160">
+			</figure>
+			<div class="dataEl">
+				<h3> iPhone6 </h3>
+				<ul>
+					<li> iOS 8 </li>
+					<li> čip A8 </li>
+					<li> 11,9 cm zaslon Retina HD </li>
+					<li> podpira 4G/LTE </li>
+					<li> bliskavica True Tone </li>
+				</ul>
+				<details>
+				<summary> Prikaži več </summary>
+				<video width="320" height="240" controls>
+				  <source src="test1.mp4" type="video/mp4">
+				  <source src="test1.ogg" type="video/ogg">
+					Your browser does not support the video tag.
+				</video>
+				</details>
+			</div>
+		</div>
+		<div class="dataContainer">
+			<figure>
+			<img src="gglass.jpg" height="160" width="160">
+			</figure>
+			<div class="dataEl">
+				<h3> Google Glass </h3>
+				<ul>
+					<li> Videos - 720p </li>
+					<li> Photos - 5 MP </li>
+					<li> Bluetooth </li>
+					<li> Wi-Fi - 802.11 b/g 2.4GHz </li>
+				</ul>
+				<details>
+				<summary> Prikaži več </summary>
+				<video width="320" height="240" controls>
+				  <source src="test1.mp4" type="video/mp4">
+				  <source src="test1.ogg" type="video/ogg">
+					Your browser does not support the video tag.
+				</video>
+				</details>
+			</div>
+		</div>
 	</div>
 	
 	</div>
@@ -43,7 +92,7 @@
       <div class="footer centered-content">
 		<div class="footer-links">
 		<a href="index.html"> Domača stran </a> |
-        <a href="index.html"> Avtor </a>
+        <a href="novice.html"> Novice </a>
 		</div>
 	  </div>
     </footer>
