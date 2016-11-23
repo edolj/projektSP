@@ -11,14 +11,14 @@
 	<div class="bigBanner centered-content">
 		<div class="prijavaUporabnika">
 			<form action="index.html" method="get">
-			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required></input>
-			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required></input>
-			<input type="submit" value="Prijava" onclick="showUser();"></input><br><br>
+			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required>
+			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required>
+			<input type="submit" value="Prijava" onclick="showUser();"><br><br>
 			</form>
-			<label> Nisi registriran? <label>
-			<a href="registration.html"><button type="button">Registracija</button></a>
+			<!--<label> Nisi registriran? </label>
+			<button type="button" onclick="redirectReg()">Registracija</button>-->
 		</div>
-		<div class="setLogo"><img src="LogoGF.JPG"></div>
+		<div class="setLogo"><img src="LogoGF.JPG" alt="logoPic"></div>
 	</div>
 	</header>
 	
@@ -28,10 +28,10 @@
 		<b><span id="prijavljen"></span></b>
 		<nav>
 		<ul id="prviMenu">
-			<a href="novice.html"><li> Novice </li></a><br>
-			<a href="novaNaprava.html"><li> Dodaj novo napravo </li></a><br>
-			<a href="index.html"><li> Priljubljeno </li></a><br>
-			<a href="index.html"><li> Forum </li></a><br>
+			<li><a href="registration.html"> Registracija </a></li>
+			<li><a href="novice.html"> Novice </a></li>
+			<li><a href="novaNaprava.html"> Objava nove naprave </a></li>
+			<li><a href="index.html"> Forum </a></li>
 		</ul>
 		</nav>
 	</div>

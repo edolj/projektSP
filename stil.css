@@ -18,11 +18,11 @@ header label {
 }
 
 div.footer {
-	padding-top: 10px;
-	border-style: thin;
-	background-color: darkgray;
-	padding-bottom: 10px;
-	position: relative;
+  padding-top: 10px;
+  border-width: thin;
+  background-color: darkgray;
+  padding-bottom: 10px;
+  position: relative;
 }
 
 div.footer-links {
@@ -56,7 +56,7 @@ div.registration {
 
 div.bigBanner {			
 	padding-top: 10px;
-	border-style: thin;
+	border-width: thin;
 	background-color: darkgray;
 	padding-bottom: 10px;
 }
@@ -81,28 +81,30 @@ div.regForm input:focus {
 div.osnovniMenu {
 	float: left;
 	margin:10px; 
-	width: 20%;
+	width: 25%;
 }
 	
 #prviMenu {
+	height: 200px;
 	padding-top: 20px;
 	padding-right: 20px;
 	padding-bottom: 10px;
 	background: #efefef;
 	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
 	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
-	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
-	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); padding: 5 20px; border-radius: 20px;
+	/*background: linear-gradient(top, #efefef 0%, #bbbbbb 100%); padding: 5 20px;*/
+	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); border-radius: 20px;
 	list-style: circle; position: relative; display: inline-table;
 	font-family: serif;
 	font-size: large;
 	font-weight: bold;
 	border-style: groove;
+	line-height: 200%;
 }
 
 li:hover { 
 	background: lightgray;
-	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); padding: 5 20px; border-radius: 20px;
+	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); border-radius: 20px;
 	font-size: 20px;
 }
 
@@ -111,15 +113,15 @@ div.glavnoOkno {
 	flex-grow:1;
 	margin-top:10px;
 	margin-bottom:10px;
-	width: 75%;
+	width: 70%;
 	float: right;
 	margin-right: 10px;
 	min-height:960px;
 	background: #efefef;
 	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
 	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
-	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
-	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); padding: 5 20px; border-radius: 20px;
+	/*background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  padding: 5 20px;*/
+	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); border-radius: 20px;
 }
 
 div.dataContainer {
@@ -143,13 +145,14 @@ h3 {
 	padding-left:10px;	
 }
 
+button:hover {
+	cursor: pointer;
+}
+
 form.objava {
     margin: 0 auto;
     width: 400px;
     padding: 1em;
-    border: 1px solid #CCC;
-    border-radius: 1em;
-	box-shadow: 10px 0px 20px rgba(0,0,0,0.15);
 }
 
 form.objava div + div {
@@ -178,4 +181,38 @@ form.objava button {
 	color: red;
 	width: 100px;
 	height: 50px;
+}
+
+#search {
+	width: 75%;
+	height: 20px;	
+}
+
+#searchButton {
+	height: 30px;
+}
+
+div.likebuydiv {
+	display:flex;
+	flex-flow:row;
+}
+
+.likeButton {
+	font-family: Serif;
+	display: block;
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color: lightblue;
+	height:50px; 
+	width:100px;
+}
+
+.buyButton {
+	display: block;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+	background-color: yellow;
+	height:50px;
+	width:100px;
 }

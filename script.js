@@ -1,7 +1,29 @@
+function redirectReg() {
+	window.location.href='registration.html';
+}
+
+function search(ele) {
+    if(event.keyCode == 13) {
+        findItems();        
+    }
+}
+
 function showUser() {
 	var string = "Prijavljen kot: ";
 	document.getElementById('prijavljen').innerHTML = string + document.getElementById("user_ime").value;
 	document.getElementById('prijavljen').display = true;
+}
+
+function findItems() {
+	var array = document.getElementsByTagName("h3");
+	var find = document.getElementById("search").value;
+	for(var i=0; i<array.length; i++) {
+		if(find === array[i].childNodes[0].textContent || 
+			find === array[i].childNodes[0].textContent.toUpperCase() ||
+				find === array[i].childNodes[0].textContent.toLowerCase()) {
+			array[i].parentElement.parentElement.style.backgroundColor = "lightblue";
+		}
+	}
 }
 
 function dodajNapravo() {
@@ -15,7 +37,7 @@ function dodajNapravo() {
 	iDiv.appendChild(figure);
 	
 	var img = document.createElement("img");
-	img.src = "gglass.jpg";
+	img.src = "iphone6.jpg";
 	img.style.width = 160 + 'px';
 	img.style.height = 160 + 'px';
 	figure.appendChild(img);
