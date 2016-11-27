@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>ForumGF</title>
+	<link rel="stylesheet" type="text/css" href="stil.css">
+	<script src="script.js"></script>
+</head>	
+
+<body>
+	<header>
+	<div class="bigBanner centered-content">
+		<div class="prijavaUporabnika"><br>
+			<form action="index.html" method="get">
+			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required>
+			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required>
+			<input type="submit" value="Prijava" onclick="showUser();"><br><br>
+			</form>
+		</div>
+		<div class="setLogo"><img src="slike/LogoGF.JPG" alt="logoPic"></div>
+	</div>
+	</header>
+	
+	<div class="main-container centered-content">
+	
+	<div class="osnovniMenu">
+		<b><span id="prijavljen"></span></b>
+		<nav>
+		<ul id="prviMenu">
+			<li><a href="index.html"> Domača stran </a></li>
+			<li><a href="registration.html"> Registracija </a></li>
+			<li><a href="novice.html"> Novice </a></li>
+			<li><a href="novaNaprava.html"> Objava nove naprave </a></li>
+			<li><a href="forum.html"> Forum </a></li>
+		</ul>
+		</nav>
+	</div>
+	
+	<br>
+	
+	<div class="glavnoOkno" id="mainOkno">
+		<div class="forumButtons">
+			<button type="button" id="forumStyleButton" onclick="dodajTemo()">+ Dodaj temo</button>
+			<!--<button type="button" id="adminX">X</button>-->
+		</div>
+		<div class="forumPage" id="forumPage">
+			<input type="text" id="naslovTeme" size=60><button type="button" id="ustvariTemo" onclick="ustvari()">Ustvari temo</button>
+			<div class="vprasanja">	
+				<h3><u> Nakup laptopa </u></h3>
+				<button type="button" id="odgovoriA" style="float:right;margin:10px;" onclick="showTextArea()">Odgovori</button>
+				<p style="padding-left:15px"><small> Objavil A.J. dne <time datetime="2016-09-08"> 8. september, 2016</time>.</small></p> 
+			</div>	
+			<div id="forumOdgovor">
+				<textarea id="textarea"></textarea>
+				<button type="button" id="odgovoriB" onclick="prikaziOdgovor(0)">Odgovori</button>
+				<button type="button" id="preklic" onclick="preklic()">Prekliči</button>
+			</div>
+		</div>
+	</div>
+	
+	</div>
+	
+	<footer>
+      <div class="footer centered-content">
+		<div class="footer-links">
+		<a href="index.html"> Domača stran </a> |
+        <a href="novice.html"> Novice </a>
+		</div>
+	  </div>
+    </footer>
+	
+	</body>
+</html>

@@ -9,7 +9,7 @@
 <body>
 	<header>
 	<div class="bigBanner centered-content">
-		<div class="prijavaUporabnika">
+		<div class="prijavaUporabnika"><br>
 			<form action="index.html" method="get">
 			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required>
 			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required>
@@ -18,7 +18,7 @@
 			<!--<label> Nisi registriran? </label>
 			<button type="button" onclick="redirectReg()">Registracija</button>-->
 		</div>
-		<div class="setLogo"><img src="LogoGF.JPG" alt="logoPic"></div>
+		<div class="setLogo"><img src="slike/LogoGF.JPG" alt="logoPic"></div>
 	</div>
 	</header>
 	
@@ -28,14 +28,15 @@
 		<b><span id="prijavljen"></span></b>
 		<nav>
 		<ul id="prviMenu">
+			<li><a href="index.html"> Domača stran </a></li>
 			<li><a href="registration.html"> Registracija </a></li>
 			<li><a href="novice.html"> Novice </a></li>
 			<li><a href="novaNaprava.html"> Objava nove naprave </a></li>
-			<li><a href="index.html"> Forum </a></li>
+			<li><a href="forum.html"> Forum </a></li>
 		</ul>
 		</nav>
 		
-		<input type="text" id="search" onkeydown="search(this)" autocomplete="on">
+		<input type="text" id="search" onkeypress="search(this)">
 		<button id="searchButton" type="button" onclick="findItems()">Find</button>
 	</div>
 	
@@ -44,7 +45,7 @@
 	<div class="glavnoOkno" id="mainOkno">
 		<div class="dataContainer">
 			<figure>
-			<img src="iphone6.jpg" alt="firstPic" height="160" width="160">
+			<img src="slike/iphone6.jpg" alt="firstPic" height="160" width="160">
 			</figure>
 			<div class="dataEl">
 				<h3>iPhone6</h3>
@@ -68,8 +69,8 @@
 				<summary> Prikaži več </summary>
 				<p> Na voljo v različnih barvah. </p>
 				<video width="320" height="240" controls>
-				  <source src="test1.mp4" type="video/mp4">
-				  <source src="test1.ogg" type="video/ogg">
+				  <source src="media/test1.mp4" type="video/mp4">
+				  <source src="media/test1.ogg" type="video/ogg">
 					Your browser does not support the video tag.
 				</video>
 				</details>
@@ -77,7 +78,7 @@
 		</div>
 		<div class="dataContainer">
 			<figure>
-			<img src="gglass.jpg" alt="secondPic" height="160" width="160">
+			<img src="slike/gglass.jpg" alt="secondPic" height="160" width="160">
 			</figure>
 			<div class="dataEl">
 				<h3>Google Glass</h3>
@@ -100,8 +101,8 @@
 				<summary> Prikaži več </summary>
 				<p> Na voljo tudi v evropskih državah. </p>
 				<video width="320" height="240" controls>
-				  <source src="test1.mp4" type="video/mp4">
-				  <source src="test1.ogg" type="video/ogg">
+				  <source src="media/test1.mp4" type="video/mp4">
+				  <source src="media/test1.ogg" type="video/ogg">
 					Your browser does not support the video tag.
 				</video>
 				</details>

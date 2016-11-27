@@ -9,16 +9,14 @@
 <body>
 	<header>
 	<div class="bigBanner centered-content">
-		<div class="prijavaUporabnika">
+		<div class="prijavaUporabnika"><br>
 			<form action="index.html" method="get">
 			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required>
 			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required>
 			<input type="submit" value="Prijava" onclick="showUser();"><br><br>
 			</form>
-			<!--<label> Nisi registriran? </label>
-			<button type="button" onclick="redirectReg()">Registracija</button>-->
 		</div>
-		<div class="setLogo"><img src="LogoGF.JPG" alt="logoPic"></div>
+		<div class="setLogo"><img src="slike/LogoGF.JPG" alt="logoPic"></div>
 	</div>
 	</header>
 	
@@ -28,10 +26,11 @@
 		<b><span id="prijavljen"></span></b>
 		<nav>
 		<ul id="prviMenu">
+			<li><a href="index.html"> Domača stran </a></li>
 			<li><a href="registration.html"> Registracija </a></li>
 			<li><a href="novice.html"> Novice </a></li>
 			<li><a href="novaNaprava.html"> Objava nove naprave </a></li>
-			<li><a href="index.html"> Forum </a></li>
+			<li><a href="forum.html"> Forum </a></li>
 		</ul>
 		</nav>
 	</div>
@@ -41,6 +40,13 @@
 	<div class="glavnoOkno">
 		<section>
 			<h2 style="color:Blue; text-align:center">Novice</h2>
+			<article style="padding: 20px;">
+				<h2>IoT conference on FRI</h2>
+				<p> Glavna tema konference je vpliv interneta stvari na spremembe v različnih gospodarskih panogah in v vsakdanjem življenju. 
+					Predstavila se bodo vodilna podjetja na področju industrije 4.0, IoT start-upi in ostali ključni igralci na tem področju. ...</p>
+				<a href="https://iot-conference.si/sl/">Preberi več</a>					
+				<p style="text-align:right;">Objavil E.L. dne <time datetime="2016-11-18"> 18. november, 2016</time>.</p>
+			</article>
 			<article style="padding: 20px;">
 				<h2>Apple iOS 10 and macOS Sierra Release Dates Announced</h2>
 				<p> At the iPhone 7 and iPhone 7 Plus smartphone launch in San Francisco, Apple announced the release dates of its latest 

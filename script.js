@@ -3,7 +3,7 @@ function redirectReg() {
 }
 
 function search(ele) {
-    if(event.keyCode == 13) {
+    if(event.keyCode === 13) {
         findItems();        
     }
 }
@@ -77,4 +77,48 @@ function dodajNapravo() {
 	}
 	
 	jDiv.appendChild(det);
+}
+
+function dodajTemo() {
+	document.getElementById("naslovTeme").style.visibility = "visible";
+	document.getElementById("ustvariTemo").style.visibility = "visible";
+}
+
+function ustvari() {
+	var t = document.createElement("h3");
+	var text = document.getElementById("naslovTeme").value;
+	var x = document.createTextNode(text);
+	t.appendChild(x);
+	t.style.textDecoration = "underline";
+	var koren = document.getElementById("forumPage");
+	koren.appendChild(t);
+	t.style.padding = "0 0 0px 20px";
+	document.getElementById("naslovTeme").style.visibility = "hidden";
+	document.getElementById("ustvariTemo").style.visibility = "hidden";
+}
+
+function showTextArea() {
+	document.getElementById("forumOdgovor").style.visibility = "visible";
+	document.getElementById("odgovoriA").style.visibility = "hidden";
+}
+
+function prikaziOdgovor(count) {
+	var parentDiv = document.getElementsByClassName("vprasanja")[count];
+	var p = document.createElement("p");
+	var text = document.getElementById("textarea").value;
+	var x = document.createTextNode(text);
+	p.appendChild(x);
+	parentDiv.append(p);
+	//console.log(parentDiv);
+	p.style.padding = "10px 30px 10px";
+	document.getElementById("forumOdgovor").style.visibility = "hidden";
+	document.getElementById("odgovoriA").style.visibility = "visible";
+	//var b = document.createElement("button");
+	//b.id = "odgovoriA";
+	//p.appendChild(b);
+}
+
+function preklic() {
+	document.getElementById("forumOdgovor").style.visibility = "hidden";
+	document.getElementById("odgovoriA").style.visibility = "visible";
 }

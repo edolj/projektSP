@@ -216,3 +216,49 @@ div.likebuydiv {
 	height:50px;
 	width:100px;
 }
+
+.forumButtons {
+	height: 5%;
+}
+
+.forumPage {
+	height: 95%;
+}
+
+#forumStyleButton {
+	float: right;
+	clear: right;
+	color: blue;
+	padding: 5px;
+	margin: 10px;
+}
+
+.vprasanja {
+	padding-left: 15px;
+}
+
+/*
+.vprasanja:hover {
+	background: darkgray;
+}
+*/
+
+#naslovTeme {
+	visibility: hidden;
+	margin-left:10px;
+}
+
+#ustvariTemo {
+	visibility: hidden;
+}
+
+#forumOdgovor {
+	visibility: hidden;
+}
+
+#textarea {
+	margin-left:10px;
+	vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
