@@ -192,18 +192,13 @@ form.objava button {
 	height: 30px;
 }
 
-div.likebuydiv {
-	display:flex;
-	flex-flow:row;
-}
-
 .likeButton {
 	font-family: Serif;
 	display: block;
 	margin-top:10px;
 	margin-bottom:10px;
 	background-color: lightblue;
-	height:50px; 
+	height:40px; 
 	width:100px;
 }
 
@@ -234,14 +229,10 @@ div.likebuydiv {
 }
 
 .vprasanja {
+	border-radius: 25px;
+    border: 2px solid #73AD21;
 	padding-left: 15px;
 }
-
-/*
-.vprasanja:hover {
-	background: darkgray;
-}
-*/
 
 #naslovTeme {
 	visibility: hidden;

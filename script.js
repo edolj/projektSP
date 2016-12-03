@@ -82,6 +82,8 @@ function dodajNapravo() {
 function dodajTemo() {
 	document.getElementById("naslovTeme").style.visibility = "visible";
 	document.getElementById("ustvariTemo").style.visibility = "visible";
+	document.getElementById("naslovTeme").style.marginBottom = "10px";
+	document.getElementById("ustvariTemo").style.marginBottom = "10px";
 }
 
 function ustvari() {
@@ -93,6 +95,8 @@ function ustvari() {
 	var koren = document.getElementById("forumPage");
 	koren.appendChild(t);
 	t.style.padding = "0 0 0px 20px";
+	t.style.border = "2px solid #73AD21";
+	t.style.borderRadius = "25px";
 	document.getElementById("naslovTeme").style.visibility = "hidden";
 	document.getElementById("ustvariTemo").style.visibility = "hidden";
 }
@@ -105,12 +109,16 @@ function showTextArea() {
 function prikaziOdgovor(count) {
 	var parentDiv = document.getElementsByClassName("vprasanja")[count];
 	var p = document.createElement("p");
-	var text = document.getElementById("textarea").value;
-	var x = document.createTextNode(text);
-	p.appendChild(x);
-	parentDiv.append(p);
-	//console.log(parentDiv);
-	p.style.padding = "10px 30px 10px";
+	var ptext = document.getElementById("textarea").value;
+	var x = document.createTextNode(ptext);
+	if(!ptext.length == 0) {	
+		p.appendChild(x);
+		parentDiv.append(p);
+		//console.log(parentDiv);
+		p.style.padding = "10px 30px 10px";
+		p.style.border = "2px solid blue";
+		p.style.borderRadius = "25px";
+	}
 	document.getElementById("forumOdgovor").style.visibility = "hidden";
 	document.getElementById("odgovoriA").style.visibility = "visible";
 	//var b = document.createElement("button");
