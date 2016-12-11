@@ -87,18 +87,25 @@ function dodajTemo() {
 }
 
 function ustvari() {
+	var koren = document.getElementById("forumPage");
+	var newDiv = document.createElement("div");
+	newDiv.className = "vprasanja";
+	koren.appendChild(newDiv);
 	var t = document.createElement("h3");
 	var text = document.getElementById("naslovTeme").value;
 	var x = document.createTextNode(text);
 	t.appendChild(x);
 	t.style.textDecoration = "underline";
-	var koren = document.getElementById("forumPage");
-	koren.appendChild(t);
-	t.style.padding = "0 0 0px 20px";
-	t.style.border = "2px solid #73AD21";
-	t.style.borderRadius = "25px";
+	newDiv.appendChild(t);
 	document.getElementById("naslovTeme").style.visibility = "hidden";
 	document.getElementById("ustvariTemo").style.visibility = "hidden";
+	var btn = document.createElement("BUTTON");        
+	var t1 = document.createTextNode("Odgovori");
+	btn.appendChild(t1);
+	btn.style.cssFloat = "right";
+	btn.style.margin = "10px";	
+	newDiv.appendChild(btn);
+	console.log(btn);
 }
 
 function showTextArea() {
