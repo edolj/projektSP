@@ -1,0 +1,62 @@
+{% extends "webPage/base.html" %}
+
+{% block main %}
+<div class="dataContainer">
+	<figure>
+	<img src="slike/iphone6.jpg" alt="firstPic" height="160" width="160">
+	</figure>
+	<div class="dataEl">
+		<h3>iPhone6</h3>
+		<ul>
+			<li> iOS 8 </li>
+			<li> čip A8 </li>
+			<li> 11,9 cm zaslon Retina HD </li>
+			<li> podpira 4G/LTE </li>
+			<li> bliskavica True Tone </li>
+		</ul>
+		<input type="button" class="likeButton" value="Like">
+		<!--<div class="likebuydiv">
+		<table>
+			<tr>
+			<td><b>Cena: 800€</b></td>
+			<td><button type="button" class="buyButton" onclick="window.location.href='https://www.mimovrste.com/'">Kupi</button></td>
+			<td><button type="button" class="likeButton">Like</button></td>
+			</tr>
+		</table>
+		</div>-->
+		<details>
+		<summary> Prikaži več </summary>
+		<p> Na voljo v različnih barvah. </p>
+		<video width="320" height="240" controls>
+		  <source src="media/test1.mp4" type="video/mp4">
+		  <source src="media/test1.ogg" type="video/ogg">
+			Your browser does not support the video tag.
+		</video>
+		</details>
+	</div>
+</div>
+<div class="dataContainer">
+	<figure>
+	<img src="slike/gglass.jpg" alt="secondPic" height="160" width="160">
+	</figure>
+	<div class="dataEl">
+		<h3>Google Glass</h3>
+		<ul>
+			<li> Videos - 720p </li>
+			<li> Photos - 5 MP </li>
+			<li> Bluetooth </li>
+			<li> Wi-Fi - 802.11 b/g 2.4GHz </li>
+		</ul>
+		<input type="button" class="likeButton" value="Like">
+		<details>
+		<summary> Prikaži več </summary>
+		<p> Na voljo tudi v evropskih državah. </p>
+		<video width="320" height="240" controls>
+		  <source src="media/test1.mp4" type="video/mp4">
+		  <source src="media/test1.ogg" type="video/ogg">
+			Your browser does not support the video tag.
+		</video>
+		</details>
+	</div>	
+</div>
+{% endblock %}

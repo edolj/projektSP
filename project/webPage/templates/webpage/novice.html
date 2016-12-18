@@ -1,0 +1,10 @@
+{% extends "webPage/base.html" %}
+
+{% block main %}
+<h2 style="color:Blue; text-align:center">Novice</h2>
+<section>
+  {% for article in articles %}
+    {% include 'webPage/article_snippet.html' %}
+  {% endfor %}
+</section>  
+{% endblock %}

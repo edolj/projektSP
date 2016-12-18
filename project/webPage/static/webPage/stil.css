@@ -1,0 +1,255 @@
+body {
+  background-color: black;
+}
+
+header label {
+  color: yellow;
+}
+
+.centered-content {
+  max-width:960px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.main-container {
+  display:flex;
+  background:lightgray;
+}
+
+div.footer {
+  padding-top: 10px;
+  border-width: thin;
+  background-color: darkgray;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+div.footer-links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+div.prijavaUporabnika {
+	padding-right: 10px;
+	padding-bottom: 10px;
+	text-align: right;
+	float:right;
+	clear:right;
+}
+
+div.setLogo {
+	padding-left: 10px;
+}
+
+div.registration {
+	width: 300px;
+	border: solid;
+	border-color: red;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+div.bigBanner {			
+	padding-top: 10px;
+	border-width: thin;
+	background-color: darkgray;
+	padding-bottom: 10px;
+}
+
+div.regForm { 
+	border: solid;
+	border-color: black;
+	width: 500px; 
+	margin: 200px auto 0 auto;
+	background-color: lightgray;
+	padding-top: 10px;
+}
+
+div.regForm input {
+	font: 1em sans-serif;
+}
+
+div.regForm input:focus {
+    border-color: #000;
+}
+
+div.osnovniMenu {
+	float: left;
+	margin:10px; 
+	width: 25%;
+}
+	
+#prviMenu {
+	height: 200px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	background: #efefef;
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
+	/*background: linear-gradient(top, #efefef 0%, #bbbbbb 100%); padding: 5 20px;*/
+	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); border-radius: 20px;
+	list-style: circle; position: relative; display: inline-table;
+	font-family: serif;
+	font-size: large;
+	font-weight: bold;
+	border-style: groove;
+	line-height: 200%;
+}
+
+li:hover { 
+	background: lightgray;
+	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); border-radius: 20px;
+	font-size: 20px;
+}
+
+div.glavnoOkno {
+	display: inline-block;
+	flex-grow:1;
+	margin-top:10px;
+	margin-bottom:10px;
+	width: 70%;
+	float: right;
+	margin-right: 10px;
+	min-height:960px;
+	background: #efefef;
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
+	/*background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  padding: 5 20px;*/
+	box-shadow: 10px 0px 20px rgba(0,0,0,0.15); border-radius: 20px;
+}
+
+div.dataContainer {
+	margin:5px;
+	padding:10px;
+	display:flex;
+	flex-flow:row;
+	flex-grow:1;
+}
+
+div.dataContainer:hover {
+    background: darkgray;
+	cursor: pointer;
+}
+
+div.dataEl {
+	margin-left: 10px;
+}	
+
+h3 {
+	padding-left:10px;	
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+form.objava {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+}
+
+form.objava div + div {
+	margin-top: 1em;
+}
+
+form.objava input, textarea {
+    font: 1em sans-serif;
+    width: 400px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+
+form.objava input:focus, textarea:focus {
+    border-color: #000;
+}
+
+form.objava textarea {
+    vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
+
+form.objava button {
+	color: red;
+	width: 100px;
+	height: 50px;
+}
+
+#search {
+	width: 75%;
+	height: 20px;	
+}
+
+#searchButton {
+	height: 30px;
+}
+
+.likeButton {
+	font-family: Serif;
+	display: block;
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color: lightblue;
+	height:40px; 
+	width:100px;
+}
+
+.buyButton {
+	display: block;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+	background-color: yellow;
+	height:50px;
+	width:100px;
+}
+
+.forumButtons {
+	height: 5%;
+}
+
+.forumPage {
+	height: 95%;
+}
+
+#forumStyleButton {
+	float: right;
+	clear: right;
+	color: blue;
+	padding: 5px;
+	margin: 10px;
+}
+
+.vprasanja {
+	border-radius: 25px;
+    border: 2px solid #73AD21;
+	padding-left: 15px;
+}
+
+#naslovTeme {
+	visibility: hidden;
+	margin-left:10px;
+}
+
+#ustvariTemo {
+	visibility: hidden;
+}
+
+#forumOdgovor {
+	visibility: hidden;
+}
+
+#textarea {
+	margin-left:10px;
+	vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}

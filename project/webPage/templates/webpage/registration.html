@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>GadgetFreak</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'webPage/stil.css' %}" />
+	<script src="script.js"></script>
+</head>	
+
+<body>
+	<header>
+	<div class="bigBanner centered-content">
+		<div class="prijavaUporabnika"><br>
+			<form action="index.html" method="get">
+			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required>
+			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required>
+			<input type="submit" value="Prijava" onclick="showUser();"><br><br>
+			</form>
+		</div>
+		<div class="setLogo"><img src="{% static 'webPage/slike/LogoGF.JPG' %}" alt="logoPic"></div>
+	</div>
+	</header>
+	
+	<div class="main-container centered-content">
+	
+	<div class="osnovniMenu">
+		<b><span id="prijavljen"></span></b>
+		<nav>
+		<ul id="prviMenu">
+			<li><a href="{% url 'index' %}"> Domača stran </a></li>
+			<li><a href="{% url 'registration' %}"> Registracija </a></li>
+			<li><a href="{% url 'news' %}"> Novice </a></li>
+			<li><a href="{% url 'addNew' %}"> Objava nove naprave </a></li>
+			<li><a href="{% url 'forum' %}"> Forum </a></li>
+		</ul>
+		</nav>
+		
+		<input type="text" id="search" onkeypress="search(this)">
+		<button id="searchButton" type="button" onclick="findItems()">Find</button>
+	</div>
+	
+	<br>
+	
+	<div class="glavnoOkno" id="mainOkno">
+		<div class="regForm">	
+			<!--<img src="{% static 'webPage/slike/LogoGF.JPG' %}" alt="logoPic" style="display: block;margin-left: auto;margin-right: auto;">-->
+		  <form action="index.html" method="get">
+		   <table style="margin: 0 auto; padding-top: 10px;">
+			<tr>
+			 <td>Uporabniško ime:</td> <td><input type="text" name="name" size=30 maxlength=50 placeholder = "Uporabniško ime" required></td>
+			</tr>
+			<tr>
+			 <td>Email:</td> <td><input type = "email" placeholder = "ime@domena.com" size=30 required /></td>
+			</tr>
+			<tr>
+			 <td>Geslo:</td> <td><input type="password" name="pwd" placeholder = "Geslo" size=30 required></td>
+			</tr>
+			<tr>
+			 <td>Potrdi geslo:</td> <td><input type="password" name="cpwd" placeholder = "Geslo" size=30 required></td>
+			</tr>
+			<tr>
+			 <td></td>
+			 <td><label class="no-fixed-width"><input type="checkbox" required />Nisem robot</label></td>	
+			</tr>
+		   </table>
+		   <br><input type="submit" value="Ustvari račun" style="display: block;margin-left: auto;margin-right: auto;height:50px; width:200px"><br>
+		  </form>
+		</div>  
+	</div>
+	
+	</div>
+	
+	<footer>
+      <div class="footer centered-content">
+		<div class="footer-links">
+		<a href="index.html"> Domača stran </a> |
+        <a href="novice.html"> Novice </a>
+		</div>
+	  </div>
+    </footer>
+	
+	</body>
+</html>
