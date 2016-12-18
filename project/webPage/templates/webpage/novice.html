@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>NewsGF</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'webPage/stil.css' %}" />
+	<script src="script.js"></script>
+</head>	
+
+<body>
+	<header>
+	<div class="bigBanner centered-content">
+		<div class="prijavaUporabnika"><br>
+			<form action="index.html" method="get">
+			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required>
+			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required>
+			<input type="submit" value="Prijava" onclick="showUser();"><br><br>
+			</form>
+		</div>
+		<div class="setLogo"><img src="{% static 'webPage/slike/LogoGF.JPG' %}" alt="logoPic"></div>
+	</div>
+	</header>
+	
+	<div class="main-container centered-content">
+	
+	<div class="osnovniMenu">
+		<b><span id="prijavljen"></span></b>
+		<nav>
+		<ul id="prviMenu">
+			<li><a href="{% url 'index' %}"> Domača stran </a></li>
+			<li><a href="{% url 'registration' %}"> Registracija </a></li>
+			<li><a href="{% url 'news' %}"> Novice </a></li>
+			<li><a href="{% url 'addNew' %}"> Objava nove naprave </a></li>
+			<li><a href="{% url 'forum' %}"> Forum </a></li>
+		</ul>
+		</nav>
+	</div>
+	
+	<br>
+	
+	<div class="glavnoOkno">
+		<section>
+			<h2 style="color:Blue; text-align:center">Novice</h2>
+			<article style="padding: 20px;">
+				<h2>IoT conference on FRI</h2>
+				<p> Glavna tema konference je vpliv interneta stvari na spremembe v različnih gospodarskih panogah in v vsakdanjem življenju. 
+					Predstavila se bodo vodilna podjetja na področju industrije 4.0, IoT start-upi in ostali ključni igralci na tem področju. ...</p>
+				<a href="https://iot-conference.si/sl/">Preberi več</a>					
+				<p style="text-align:right;">Objavil E.L. dne <time datetime="2016-11-18"> 18. november, 2016</time>.</p>
+			</article>
+			<article style="padding: 20px;">
+				<h2>Apple iOS 10 and macOS Sierra Release Dates Announced</h2>
+				<p> At the iPhone 7 and iPhone 7 Plus smartphone launch in San Francisco, Apple announced the release dates of its latest 
+					operating system for mobile – iOS 10 and that of Mac computers – macOS...</p>
+				<a href="http://thegadgetsfreak.com/apple-ios-10-macos-sierra-release-dates-announced/">Preberi več</a>					
+				<p style="text-align:right;">Objavil E.L. dne <time datetime="2016-09-08"> 8. september, 2016</time>.</p>
+			</article>
+			<article style="padding: 20px;">
+				<h2>Lenovo Miix 710: 12-inch Tablet with Intel Kaby Lake, 9 hrs Battery Life</h2>
+				<p> Without any prior special announcement, Lenovo has listed up the Miix 710,
+					a more powerful version of its Lenovo Miix 700 2-in-1 hybrid tablet on its 
+					official website. The sleek looking Lenovo Miix 710 was...</p>
+				<a href="http://thegadgetsfreak.com/lenovo-miix-710-12-inch-tablet-intel-kaby-lake-9-hrs-battery-life/">Preberi več</a>	
+				<p style="text-align:right;">Objavil E.L. dne <time datetime="2016-09-24"> 24. september, 2016</time>.</p>
+			</article>
+		</section>
+	</div>
+	
+	</div>
+	
+	<footer>
+      <div class="footer centered-content">
+		<div class="footer-links">
+		<a href="index.html"> Domača stran </a> |
+        <a href="novice.html"> Novice </a>
+		</div>
+	  </div>
+    </footer>
+	
+	</body>
+</html>
