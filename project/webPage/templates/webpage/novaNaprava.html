@@ -1,97 +1,36 @@
-{% load static %}
+{% extends "webPage/base.html" %}
 
-<!DOCTYPE html>
-<head>
-	<meta charset="UTF-8">
-	<title>AddGF</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'webPage/stil.css' %}" />
-	<script src="script.js"></script>
-</head>	
-
-<body>
-	<header>
-	<div class="bigBanner centered-content">
-		<div class="prijavaUporabnika"><br>
-			<form action="index.html" method="get">
-			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required>
-			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required>
-			<input type="submit" value="Prijava" onclick="showUser();"><br><br>
-			</form>
-			<!--<label> Nisi registriran? </label>
-			<button type="button" onclick="redirectReg()">Registracija</button>-->
-		</div>
-		<div class="setLogo"><img src="{% static 'webPage/slike/LogoGF.JPG' %}" alt="logoPic"></div>
-	</div>
-	</header>
-	
-	<div class="main-container centered-content">
-	
-	<div class="osnovniMenu">
-		<b><span id="prijavljen"></span></b>
-		<nav>
-		<ul id="prviMenu">
-			<li><a href="{% url 'index' %}"> Domača stran </a></li>
-			<li><a href="{% url 'registration' %}"> Registracija </a></li>
-			<li><a href="{% url 'news' %}"> Novice </a></li>
-			<li><a href="{% url 'addNew' %}"> Objava nove naprave </a></li>
-			<li><a href="{% url 'forum' %}"> Forum </a></li>
-		</ul>
-		</nav>
-	</div>
-	
-	<br>
-	
-	<div class="glavnoOkno">
-		<!--<form action="novaNaprava.html" method="get" class="objava" onsubmit="dodajNapravo()">-->
-		<form action="index.html" method="get" class="objava">
+	{% block main %}
+		{% if user.is_authenticated %}
+		<form method="POST" action="{% url 'index' %}" class="objava" enctype="multipart/form-data">
+			{% csrf_token %}
 			<h2> Vpis vsebine naprave </h2>
 			<div>
 				<label>Ime naprave:</label> <br>
-				<input type="text" id="id_naprave" maxlength=60 required> <br>
+				{{ form.imeNaprave }} <br>
 			</div>
 			<div>	
-				<label>Tehnične lastnosti:</label> <br>
-				<table id="id_tech">
-				<tr><td><input name="ts" type="text" maxlength=60></td></tr>
-				<tr><td><input name="ts" type="text" maxlength=60></td></tr>
-				<tr><td><input name="ts" type="text" maxlength=60></td></tr>
-				<tr><td><input name="ts" type="text" maxlength=60></td></tr>
-				<tr><td><input name="ts" type="text" maxlength=60></td></tr>
-				</table>
-			</div>
-			<div>
-				<label>Cena: </label> <br>
-				<input type="number" style="width:100px;" min="0" max="1000000" required> <span>€</span><br>
+				<label>Opis:</label> <br>
+				{{ form.opis }} <br>
 			</div>
 			<div>	
-				<label>Dodaten opis:</label> <br>
-				<textarea id="dodatenOpis"></textarea> <br>
+				<label>Cena(€):</label> <br>
+				{{ form.cena }} <br>
 			</div>
 			<div>	
 				<label>Dodajte fotografijo:</label> <br>
-				<input type="file" name="pic" accept="image/*"> <br>
+				{{ form.picture }} <br>
 			</div>
 			<div>	
 				<label>Dodajte video:</label> <br>
-				<input type="file" name="vid" accept="video/*"> <br>
+				{{ form.video }} <br>
 			</div>
 			<div>	
-				<button type="submit" value="Prikaži">Prikaži</button>
-				<!--<button type="button" onclick="dodajNapravo()"> Prikaži </button>-->
+				<button type="submit" value="Prikaži" name="addNew" style="display: block;
+					margin-left: auto;margin-right: auto;height:50px; width:200px">Prikaži</button>
 			</div>
 		</form>
-	</div>
-	
-	</div>
-	
-	<footer>
-      <div class="footer centered-content">
-		<div class="footer-links">
-		<a href="index.html"> Domača stran </a> |
-        <a href="novice.html"> Novice </a>
-		</div>
-	  </div>
-    </footer>
-	
-	</body>
-</html>
+        {% else %}
+			<p style="padding-left:20px"> Za dostop do te strani se je potrebno prijaviti.</p>
+		{% endif %}
+	{% endblock %}

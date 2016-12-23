@@ -5,20 +5,24 @@
 	<meta charset="UTF-8">
 	<title>GadgetFreak</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'webPage/stil.css' %}" />
-	<script src="script.js"></script>
+	<!--<script src="script.js"></script>-->
 </head>	
 
 <body>
 	<header>
 	<div class="bigBanner centered-content">
 		<div class="prijavaUporabnika"><br>
-			<form action="index.html" method="get">
-			<input type="text" id="user_ime" placeholder="Uporabnisko ime" required>
-			<input type="password" id="user_pass" placeholder="Geslo" maxlength=20 required>
-			<input type="submit" value="Prijava" onclick="showUser();"><br><br>
+			{% if user.is_authenticated %}
+			<span>Prijavljen kot {{ user.username }}.
+				<a href="{% url 'logout' %}">Odjava</a>
+			</span>
+			{% else %}
+			<form method="POST" action="">
+				{% csrf_token %}
+				{{ loginForm.as_table }}
+				<input type="submit" name="prijava" value="Prijava" />
 			</form>
-			<!--<label> Nisi registriran? </label>
-			<button type="button" onclick="redirectReg()">Registracija</button>-->
+			{% endif %}
 		</div>
 		<div class="setLogo"><img src="{% static 'webPage/slike/LogoGF.JPG' %}" alt="logoPic"></div>
 	</div>
@@ -38,8 +42,9 @@
 		</ul>
 		</nav>
 		
-		<input type="text" id="search" onkeypress="search(this)">
-		<button id="searchButton" type="button" onclick="findItems()">Find</button>
+		{% block find %}
+
+		{% endblock %}
 	</div>
 	
 	<br>
