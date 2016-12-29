@@ -11,18 +11,15 @@
 <body>
 	<header>
 	<div class="bigBanner centered-content">
-		<div class="prijavaUporabnika"><br>
-			{% if user.is_authenticated %}
-			<span>Prijavljen kot {{ user.username }}.
-				<a href="{% url 'logout' %}">Odjava</a>
-			</span>
-			{% else %}
-			<form method="POST" action="">
-				{% csrf_token %}
-				{{ loginForm.as_table }}
-				<input type="submit" name="prijava" value="Prijava" />
-			</form>
-			{% endif %}
+		{% block login %}
+		
+		{% endblock %}
+		<div class="prijavaUporabnika">
+		{% if user.is_authenticated %}
+		<span>Prijavljen kot {{ user.username }}.
+			<a href="{% url 'logout' %}">Odjava</a>
+		</span>
+		{% endif %}
 		</div>
 		<div class="setLogo"><img src="{% static 'webPage/slike/LogoGF.JPG' %}" alt="logoPic"></div>
 	</div>
@@ -60,8 +57,8 @@
 	<footer>
       <div class="footer centered-content">
 		<div class="footer-links">
-		<a href="index.html"> Domača stran </a> |
-        <a href="novice.html"> Novice </a>
+		<a href="{% url 'index' %}"> Domača stran </a> |
+        <a href="{% url 'news' %}"> Novice </a>
 		</div>
 	  </div>
     </footer>

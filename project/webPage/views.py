@@ -1,5 +1,6 @@
 ﻿from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from django.contrib.auth.models import User
@@ -44,51 +45,28 @@ def index(request):
     context['loginForm'] = LoginForm()
     return render(request, 'webPage/index.html', context)
 
+def izdelek_view(request, izdelek_id):	
+	n = Naprava.objects.get(pk=izdelek_id)
+	return render(request, 'webPage/izdelek.html', {'naprava':n, 'loginForm': LoginForm()})
+	
 def forum(request):
 	context = {}
 	return render(request, 'webPage/forum.html', context)
 
 def registration(request):
     context = {}
-    
-    if request.method=='POST' and 'prijava' in request.POST:
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
-            if user is not None:
-                login(request, user)
-
     context['form'] = UserForm()
-    context['loginForm'] = LoginForm()
     return render(request, 'webPage/registration.html', context)
 
 def news(request):
 	context = {}
 	a = Article.objects.all()
-	
-	if request.method=='POST' and 'prijava' in request.POST:
-		form = LoginForm(request.POST)
-		if form.is_valid():
-			user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
-			if user is not None:
-				login(request, user)
-
 	context['articles'] = a
-	context['loginForm'] = LoginForm()
 	return render(request, 'webPage/novice.html', context)
 	
 def addNew(request):
 	context = {}
-	
-	if request.method=='POST' and 'prijava' in request.POST:
-		form = LoginForm(request.POST)
-		if form.is_valid():
-			user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
-			if user is not None:
-				login(request, user)
-
 	context['form'] = NapravaForm()
-	context['loginForm'] = LoginForm()
 	return render(request, 'webPage/novaNaprava.html', context)
 	
 def logout_user(request):

@@ -31,6 +31,7 @@
 			</div>
 		</form>
         {% else %}
-			<p style="padding-left:20px"> Za dostop do te strani se je potrebno prijaviti.</p>
+			<p style="text-align:center"> Za dostop do te strani se je potrebno prijaviti.</p>
+			<button style="margin-left:300px"><a href="{% url 'index' %}"> Prijava zgoraj</a></button>
 		{% endif %}
 	{% endblock %}

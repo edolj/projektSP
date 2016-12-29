@@ -4,13 +4,7 @@
 	</figure>
 	<div class="dataEl">
 		<h3>{{ naprava.imeNaprave }}</h3>
-		<p> {{ naprava.cena }} € </p>
-		<details>
-		<summary> Prikaži več </summary>
 		<p> {{ naprava.opis }} </p>
-		<video width="320" height="240" controls>
-		  <source src="{{ naprava.video.url }}" type="video/mp4">
-		</video>
-		</details>
+		<button><a href="{% url 'izdelek_view' naprava.id %}"> Več info</a></button>
 	</div>
 </div>

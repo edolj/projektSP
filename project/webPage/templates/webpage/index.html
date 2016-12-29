@@ -1,5 +1,19 @@
 {% extends "webPage/base.html" %}
 
+{% block login %}
+	<div class="prijavaUporabnika"><br>
+		{% if user.is_authenticated %}
+
+		{% else %}
+		<form method="POST" action="">
+			{% csrf_token %}
+			{{ loginForm.as_table }}
+			<input type="submit" name="prijava" value="Prijava" />
+		</form>
+		{% endif %}
+	</div>
+{% endblock %}
+
 {% block find %}
 <input type="text" id="search" onkeypress="search(this)">
 <button id="searchButton" type="button" onclick="findItems()">Find</button>
