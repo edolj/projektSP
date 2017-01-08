@@ -1,7 +1,10 @@
 {% extends "webPage/base.html" %}
 
 {% block main %}
-	<h3 style="color:red; text-align:center">{{ naprava.imeNaprave }}</h3>
+	<h3 style="color:red; text-align:center">{{ naprava.imeNaprave }} 
+	{% if perms.webPage.edit_naprava %}
+	<a style="float:right; padding-right:10px"href="{% url 'izdelek_edit' naprava.id %}">[Uredi]</a>
+	{% endif %}</h3> 
 	<p style="padding-left:20px"> {{ naprava.opis }} </p>
 	<h4 style="padding-left:40px"> Cena: {{ naprava.cena }} € </h4>
 	<div style="display:flex;align-items: center;justify-content: center;">
@@ -12,16 +15,24 @@
 	<!--<button style="margin-left:20px"><a href="{% url 'index' %}">Domača stran</a></button>-->
 	</div>
 
-	<div style="margin-top: 20px">
+	<div style="margin-top: 20px;">
 		<h3><b> Komentarji </b></h3>
-		<textarea id="textarea"></textarea><br>
-		<input style="margin-left:360px; margin-top:10px; margin-bottom:10px;color:green" 
-			type="submit" value="Objavi"/>
-		<!--<button><a style="color:green" href="{% url 'izdelek_view' naprava.id %}">Prekliči</a></button>-->
+		{% if user.is_authenticated %}
+		<form method="POST" action="{% url 'izdelek_view' naprava.id %}" style="padding-left:10px">
+			{% csrf_token %}
+			{{komentar.comment}}
+			<input style="width:200px; height:40px; margin-left:200px;color:green; margin-bottom:5px;"
+					type="submit" value="Objavi"/>
+		</form>
+		{% else %}
+		<p style="padding-left:10px"> Za komentiranje je obvezna prijava.</p>
+		{% endif %}
 	</div>
 	
-	<div class="vprasanja">
-		<p> {{komentar}} </p>
-		<small> Objavil {{user}} dne {{datum}}.</small>
+	{% for i in kom %}
+	<div class="vprasanja" style="margin-bottom:5px">	
+		<p> {{i.comment}} </p>
+		<small> Objavil <b>{{i.author}}</b> dne {{i.pub_date}}.</small>
 	</div>
+	{% endfor %}
 {% endblock %}

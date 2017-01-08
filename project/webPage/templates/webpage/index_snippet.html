@@ -3,8 +3,9 @@
 	<img src="{{ naprava.picture.url }}" alt="firstPic" height="160" width="160">
 	</figure>
 	<div class="dataEl">
-		<h3>{{ naprava.imeNaprave }}</h3>
+		<h3 style="color:blue">{{ naprava.imeNaprave }}</h3>
 		<p> {{ naprava.opis }} </p>
+		<h4> Cena: {{ naprava.cena }} € </h4>
 		<button><a href="{% url 'izdelek_view' naprava.id %}"> Več info</a></button>
 	</div>
 </div>

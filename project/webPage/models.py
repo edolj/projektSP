@@ -20,4 +20,16 @@ class Naprava(models.Model):
   picture = models.FileField()
   video = models.FileField()
   pub_date = models.DateTimeField( default=datetime.now )
-  author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)  
+  author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
+  class Meta:
+    permissions = (
+      ('edit_naprava', 'Can edit naprava'),
+    )  
+  
+class Comment(models.Model):
+  comment = models.TextField()
+  pub_date = models.DateTimeField( default=datetime.now )
+  naprava = models.ForeignKey(Naprava, on_delete=models.CASCADE, null=True )
+  author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+  

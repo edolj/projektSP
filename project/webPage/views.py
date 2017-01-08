@@ -1,22 +1,21 @@
 ﻿from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from .models import Article
-from .models import Naprava
-from .forms import UserForm
-from .forms import LoginForm
-from .forms import NapravaForm
+from django.contrib.auth.decorators import login_required, permission_required
+
+from .models import Article, Naprava, Comment
+from .forms import UserForm, LoginForm, NapravaForm, CommentForm
 
 # comment
+app_name = 'webPage'
 def index(request):
     context = {}
 
     if request.method=="POST" and 'reg' in request.POST:
-        print("yes")
+        print(request.POST)
         form2 = UserForm(request.POST)
         if form2.is_valid():
             new_user = User.objects.create_user(username=form2.cleaned_data['username'],
@@ -45,10 +44,37 @@ def index(request):
     context['loginForm'] = LoginForm()
     return render(request, 'webPage/index.html', context)
 
-def izdelek_view(request, izdelek_id):	
+def izdelek_view(request, izdelek_id):
+    n = Naprava.objects.get(pk=izdelek_id)
+    if request.method=='POST':
+        idNaprava = Comment(naprava=n)
+        form = CommentForm(request.POST, instance=idNaprava)
+        if form.is_valid():
+            comment = Comment(comment=form.cleaned_data['comment'])
+            author = Comment(author=request.user)
+            naprava = idNaprava
+            print(naprava.naprava.id)
+            form.save()
+
+    c = Comment.objects.filter(naprava = izdelek_id)
+    return render(request, 'webPage/izdelek.html', {'naprava':n, 'kom':c,
+                           'loginForm': LoginForm(), 'komentar': CommentForm()})
+
+@permission_required('webPage.edit_naprava')
+def izdelek_edit(request, izdelek_id):
 	n = Naprava.objects.get(pk=izdelek_id)
-	return render(request, 'webPage/izdelek.html', {'naprava':n, 'loginForm': LoginForm()})
+	fillForm = NapravaForm(instance = n)
 	
+	if request.method=='POST' and 'edit' in request.POST:
+		form = NapravaForm(request.POST, request.FILES, instance=n)
+		#print(form)
+		if form.is_valid():
+			print(form)
+			form.save()
+			return HttpResponseRedirect(reverse('index'))
+	
+	return render(request, 'webPage/izdelek_edit.html', {'naprava':n, 'fillForm':fillForm})
+
 def forum(request):
 	context = {}
 	return render(request, 'webPage/forum.html', context)
