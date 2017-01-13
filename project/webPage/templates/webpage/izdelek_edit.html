@@ -1,18 +1,19 @@
 {% extends "webPage/base.html" %}
+{% load i18n %}
 
 {% block main %}
 	<h3 style="color:red; text-align:center">{{ naprava.imeNaprave }}</h3> 
 	<form method="POST" action="#" style="margin:20px" enctype="multipart/form-data">
 	{% csrf_token %}
-	<label> Ime naprave: </label>
+	<label>{% blocktrans %} Ime naprave: {% endblocktrans %}</label>
 	<br>{{fillForm.imeNaprave}}<br>
-	<label> Opis: </label> 
+	<label>{% blocktrans %} Opis: {% endblocktrans %}</label> 
 	<br>{{fillForm.opis}}<br>
-	<label> Cena: </label> 
+	<label>{% blocktrans %} Cena: {% endblocktrans %}</label> 
 	{{fillForm.cena}} €<br>
-	<label> Slike: </label> 
+	<label>{% blocktrans %} Slike: {% endblocktrans %}</label> 
 	<br>{{fillForm.picture}}<br>
-	<label> Video: </label> 
+	<label>{% blocktrans %} Video: {% endblocktrans %}</label> 
 	<br>{{fillForm.video}}<br>
 	<br><input type="submit" name="edit" style="margin:20px; width:200px; height:50px" value="Shrani"/>
 	</form>

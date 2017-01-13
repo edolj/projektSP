@@ -1,5 +1,6 @@
+{% load i18n %}
 <article style="padding: 20px;">
 	<h2>{{article.title}}</h2>
 	<p> {{article.content}} </p>				
-	<p style="text-align:right;">Objavil {{article.author}} dne {{article.pub_date}}.</p>
+	<p style="text-align:right;">{% blocktrans %} Objavil {% endblocktrans %}{{article.author}}{% blocktrans %} dne {% endblocktrans %}{{article.pub_date}}.</p>
 </article>

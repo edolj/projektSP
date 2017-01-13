@@ -1,37 +1,38 @@
 {% extends "webPage/base.html" %}
+{% load i18n %}
 
 	{% block main %}
 		{% if user.is_authenticated %}
 		<form method="POST" action="{% url 'index' %}" class="objava" enctype="multipart/form-data">
 			{% csrf_token %}
-			<h2> Vpis vsebine naprave </h2>
+			<h2>{% blocktrans %} Vpis vsebine naprave {% endblocktrans %}</h2>
 			<div>
-				<label>Ime naprave:</label> <br>
+				<label>{% blocktrans %}Ime naprave:{% endblocktrans %}</label> <br>
 				{{ form.imeNaprave }} <br>
 			</div>
 			<div>	
-				<label>Opis:</label> <br>
+				<label>{% blocktrans %}Opis:{% endblocktrans %}</label> <br>
 				{{ form.opis }} <br>
 			</div>
 			<div>	
-				<label>Cena(€):</label> <br>
+				<label>{% blocktrans %}Cena{% endblocktrans %}(€):</label> <br>
 				{{ form.cena }} <br>
 			</div>
 			<div>	
-				<label>Dodajte fotografijo:</label> <br>
+				<label>{% blocktrans %}Dodajte fotografijo:{% endblocktrans %}</label> <br>
 				{{ form.picture }} <br>
 			</div>
 			<div>	
-				<label>Dodajte video:</label> <br>
+				<label>{% blocktrans %}Dodajte video:{% endblocktrans %}</label> <br>
 				{{ form.video }} <br>
 			</div>
 			<div>	
 				<button type="submit" value="Prikaži" name="addNew" style="display: block;
-					margin-left: auto;margin-right: auto;height:50px; width:200px">Prikaži</button>
+					margin-left: auto;margin-right: auto;height:50px; width:200px">{% blocktrans %}Prikaži{% endblocktrans %}</button>
 			</div>
 		</form>
         {% else %}
-			<p style="text-align:center"> Za dostop do te strani se je potrebno prijaviti.</p>
-			<button style="margin-left:300px"><a href="{% url 'index' %}"> Prijava zgoraj</a></button>
+			<p style="text-align:center">{% blocktrans %} Za dostop do te strani se je potrebno prijaviti.{% endblocktrans %}</p>
+			<button style="margin-left:300px"><a href="{% url 'index' %}">{% blocktrans %}Prijava{% endblocktrans %}</a></button>
 		{% endif %}
 	{% endblock %}

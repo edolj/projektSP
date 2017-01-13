@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <head>
@@ -6,7 +7,7 @@
 	<title>GadgetFreak</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'webPage/stil.css' %}" />
 	<!--<script src="script.js"></script>-->
-</head>	
+</head>
 
 <body>
 	<header>
@@ -16,12 +17,28 @@
 		{% endblock %}
 		<div class="prijavaUporabnika">
 		{% if user.is_authenticated %}
-		<span>Prijavljen kot {{ user.username }}.
-			<a href="{% url 'logout' %}">Odjava</a>
+		<span>{% blocktrans with user=user.username%}Prijavljen kot {{ user }}.{% endblocktrans %}
+			<a href="{% url 'logout' %}">{% blocktrans %}Odjava{% endblocktrans %}</a>
 		</span>
 		{% endif %}
 		</div>
 		<div class="setLogo"><img src="{% static 'webPage/slike/LogoGF.JPG' %}" alt="logoPic"></div>
+	
+		<form style="padding-left:10px" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+		<input name="next" type="hidden" value="{{ redirect_to }}" />
+			<select name="language">
+			{% get_current_language as LANGUAGE_CODE %}
+			{% get_available_languages as LANGUAGES %}
+			{% get_language_info_list for LANGUAGES as languages %}
+			{% for language in languages %}
+				<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+					{{ language.name_local }} ({{ language.code }})
+				</option>
+			{% endfor %}
+			</select>
+		<input type="submit" value="OK" />
+		</form>
+
 	</div>
 	</header>
 	
@@ -31,10 +48,10 @@
 		<b><span id="prijavljen"></span></b>
 		<nav>
 		<ul id="prviMenu">
-			<li><a href="{% url 'index' %}"> Domača stran </a></li>
-			<li><a href="{% url 'registration' %}"> Registracija </a></li>
-			<li><a href="{% url 'news' %}"> Novice </a></li>
-			<li><a href="{% url 'addNew' %}"> Objava nove naprave </a></li>
+			<li><a href="{% url 'index' %}">{% blocktrans %} Domača stran {% endblocktrans %}</a></li>
+			<li><a href="{% url 'registration' %}">{% blocktrans %} Registracija {% endblocktrans %}</a></li>
+			<li><a href="{% url 'news' %}">{% blocktrans %} Novice {% endblocktrans %}</a></li>
+			<li><a href="{% url 'addNew' %}">{% blocktrans %} Objava nove naprave {% endblocktrans %}</a></li>
 			<!--<li><a href="{% url 'forum' %}"> Forum </a></li>-->
 		</ul>
 		</nav>
@@ -59,8 +76,8 @@
 	<footer>
       <div class="footer centered-content">
 		<div class="footer-links">
-		<a href="{% url 'index' %}"> Domača stran </a> |
-        <a href="{% url 'news' %}"> Novice </a>
+		<a href="{% url 'index' %}">{% blocktrans %} Domača stran {% endblocktrans %}</a> |
+        <a href="{% url 'news' %}">{% blocktrans %} Novice {% endblocktrans %}</a>
 		</div>
 	  </div>
     </footer>

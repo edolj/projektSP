@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-10 00:02+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\webPage\templates\webpage\article_snippet.html:5
+#: .\webPage\templates\webpage\izdelek.html:36
+msgid " Objavil "
+msgstr " Published by "
+
+#: .\webPage\templates\webpage\article_snippet.html:5
+#: .\webPage\templates\webpage\izdelek.html:36
+msgid " dne "
+msgstr " day "
+
+#: .\webPage\templates\webpage\base.html:20
+#, python-format
+msgid "Prijavljen kot %(user)s."
+msgstr "Logged in as %(user)s."
+
+#: .\webPage\templates\webpage\base.html:21
+msgid "Odjava"
+msgstr "Logout"
+
+#: .\webPage\templates\webpage\base.html:35
+#: .\webPage\templates\webpage\base.html:63
+msgid " Domača stran "
+msgstr "Homepage"
+
+#: .\webPage\templates\webpage\base.html:36
+msgid " Registracija "
+msgstr "Registration"
+
+#: .\webPage\templates\webpage\base.html:37
+#: .\webPage\templates\webpage\base.html:64
+#: .\webPage\templates\webpage\novice.html:5
+msgid " Novice "
+msgstr " News "
+
+#: .\webPage\templates\webpage\base.html:38
+msgid " Objava nove naprave "
+msgstr " Public new gadget "
+
+#: .\webPage\templates\webpage\index_snippet.html:12
+#: .\webPage\templates\webpage\izdelek.html:10
+#: .\webPage\templates\webpage\izdelek_edit.html:12
+msgid " Cena: "
+msgstr " Price: "
+
+#: .\webPage\templates\webpage\index_snippet.html:14
+msgid "Med najdrazjimi!"
+msgstr "Expensive category!"
+
+#: .\webPage\templates\webpage\index_snippet.html:16
+msgid " Več info "
+msgstr " More info "
+
+#: .\webPage\templates\webpage\izdelek.html:7
+msgid "[Uredi]"
+msgstr "[Edit]"
+
+#: .\webPage\templates\webpage\izdelek.html:20
+msgid " Komentarji "
+msgstr "Comment section"
+
+#: .\webPage\templates\webpage\izdelek.html:29
+msgid " Za komentiranje je obvezna prijava."
+msgstr " To comment on this page you need to be logged in. "
+
+#: .\webPage\templates\webpage\izdelek_edit.html:8
+#, fuzzy
+#| msgid " Objava nove naprave "
+msgid " Ime naprave: "
+msgstr " Name of object: "
+
+#: .\webPage\templates\webpage\izdelek_edit.html:10
+msgid " Opis: "
+msgstr " Description "
+
+#: .\webPage\templates\webpage\izdelek_edit.html:14
+msgid " Slike: "
+msgstr " Photos: "
+
+#: .\webPage\templates\webpage\izdelek_edit.html:16
+msgid " Video: "
+msgstr " Video: "
+
+#: .\webPage\templates\webpage\novaNaprava.html:8
+#, fuzzy
+#| msgid " Objava nove naprave "
+msgid " Vpis vsebine naprave "
+msgstr " Public new gadget "
+
+#: .\webPage\templates\webpage\novaNaprava.html:10
+msgid "Ime naprave:"
+msgstr "Name:"
+
+#: .\webPage\templates\webpage\novaNaprava.html:14
+msgid "Opis:"
+msgstr "Description:"
+
+#: .\webPage\templates\webpage\novaNaprava.html:18
+msgid "Cena"
+msgstr "Price:"
+
+#: .\webPage\templates\webpage\novaNaprava.html:22
+msgid "Dodajte fotografijo:"
+msgstr "Upload photo:"
+
+#: .\webPage\templates\webpage\novaNaprava.html:26
+msgid "Dodajte video:"
+msgstr "Upload video:"
+
+#: .\webPage\templates\webpage\novaNaprava.html:31
+msgid "Prikaži"
+msgstr "Submit"
+
+#: .\webPage\templates\webpage\novaNaprava.html:35
+msgid " Za dostop do te strani se je potrebno prijaviti."
+msgstr " To access this page you need to be logged in."
+
+#: .\webPage\templates\webpage\novaNaprava.html:36
+#, fuzzy
+#| msgid "Odjava"
+msgid "Prijava"
+msgstr "Login"
+
+#: .\webPage\templates\webpage\registration.html:10
+msgid "Uporabniško ime:"
+msgstr "Username:"
+
+#: .\webPage\templates\webpage\registration.html:16
+msgid "Geslo:"
+msgstr "Password:"
+
+#: .\webPage\templates\webpage\registration.html:20
+msgid "Nisem robot"
+msgstr "Not a robot"

@@ -13,6 +13,9 @@ class Article(models.Model):
   pub_date = models.DateTimeField( default=datetime.now )
   author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
   
+"""
+podatki za napravo
+"""  
 class Naprava(models.Model):
   imeNaprave = models.CharField(max_length=60, default='')
   opis = models.TextField()
@@ -22,6 +25,18 @@ class Naprava(models.Model):
   pub_date = models.DateTimeField( default=datetime.now )
   author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
+  """
+  return True if object's price is larger then suggested, otherwise False
+  """
+  def is_expensive(self):
+    if self.cena >= 1500:
+      return True
+  
+    return False
+  
+  """
+  adding permissions for users
+  """
   class Meta:
     permissions = (
       ('edit_naprava', 'Can edit naprava'),

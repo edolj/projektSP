@@ -1,11 +1,18 @@
+{% load i18n %}
 <div class="dataContainer">
 	<figure>
 	<img src="{{ naprava.picture.url }}" alt="firstPic" height="160" width="160">
 	</figure>
 	<div class="dataEl">
-		<h3 style="color:blue">{{ naprava.imeNaprave }}</h3>
+		<h3 style="color:blue">{{ naprava.imeNaprave }} 
+		{% if naprava.is_recent %}
+		<span style="color:red; float:right"><b>NOVO!</b></span>
+		{% endif %}</h3>
 		<p> {{ naprava.opis }} </p>
-		<h4> Cena: {{ naprava.cena }} € </h4>
-		<button><a href="{% url 'izdelek_view' naprava.id %}"> Več info</a></button>
+		<h4>{% blocktrans %} Cena: {% endblocktrans %}{{ naprava.cena }} € 
+		{% if naprava.is_expensive %} 
+		<span style="color:red; float:right"><small>{% blocktrans %}Med najdrazjimi!{% endblocktrans %}</small></span>
+		{% endif %}</h4>
+		<button><a href="{% url 'izdelek_view' naprava.id %}">{% blocktrans %} Več info {% endblocktrans %}</a></button>
 	</div>
 </div>

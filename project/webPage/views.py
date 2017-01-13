@@ -11,6 +11,9 @@ from .forms import UserForm, LoginForm, NapravaForm, CommentForm
 
 # comment
 app_name = 'webPage'
+"""
+landing page
+"""
 def index(request):
     context = {}
 

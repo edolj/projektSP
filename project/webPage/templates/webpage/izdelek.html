@@ -1,12 +1,13 @@
 {% extends "webPage/base.html" %}
+{% load i18n %}
 
 {% block main %}
 	<h3 style="color:red; text-align:center">{{ naprava.imeNaprave }} 
 	{% if perms.webPage.edit_naprava %}
-	<a style="float:right; padding-right:10px"href="{% url 'izdelek_edit' naprava.id %}">[Uredi]</a>
+	<a style="float:right; padding-right:10px"href="{% url 'izdelek_edit' naprava.id %}">{% blocktrans %}[Uredi]{% endblocktrans %}</a>
 	{% endif %}</h3> 
 	<p style="padding-left:20px"> {{ naprava.opis }} </p>
-	<h4 style="padding-left:40px"> Cena: {{ naprava.cena }} € </h4>
+	<h4 style="padding-left:40px">{% blocktrans %} Cena: {% endblocktrans %}{{ naprava.cena }} € </h4>
 	<div style="display:flex;align-items: center;justify-content: center;">
 		<img style="margin-right: 100px" src="{{ naprava.picture.url }}" alt="firstPic" height="180" width="180">
 		<video width="320" height="240" controls style="align:center-right">
@@ -16,7 +17,7 @@
 	</div>
 
 	<div style="margin-top: 20px;">
-		<h3><b> Komentarji </b></h3>
+		<h3><b>{% blocktrans %} Komentarji {% endblocktrans %}</b></h3>
 		{% if user.is_authenticated %}
 		<form method="POST" action="{% url 'izdelek_view' naprava.id %}" style="padding-left:10px">
 			{% csrf_token %}
@@ -25,14 +26,14 @@
 					type="submit" value="Objavi"/>
 		</form>
 		{% else %}
-		<p style="padding-left:10px"> Za komentiranje je obvezna prijava.</p>
+		<p style="padding-left:10px">{% blocktrans %} Za komentiranje je obvezna prijava.{% endblocktrans %}</p>
 		{% endif %}
 	</div>
 	
 	{% for i in kom %}
 	<div class="vprasanja" style="margin-bottom:5px">	
 		<p> {{i.comment}} </p>
-		<small> Objavil <b>{{i.author}}</b> dne {{i.pub_date}}.</small>
+		<small>{% blocktrans %} Objavil {% endblocktrans %}<b>{{i.author}}</b>{% blocktrans %} dne {% endblocktrans %}{{i.pub_date}}.</small>
 	</div>
 	{% endfor %}
 {% endblock %}
