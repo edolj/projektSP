@@ -6,16 +6,14 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 # Create your models here.
-
+""" model for news """  
 class Article(models.Model):
   title = models.CharField(max_length=100, default='')
   content = models.TextField()
   pub_date = models.DateTimeField( default=datetime.now )
   author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
   
-"""
-podatki za napravo
-"""  
+""" model for naprava """  
 class Naprava(models.Model):
   imeNaprave = models.CharField(max_length=60, default='')
   opis = models.TextField()
@@ -42,6 +40,7 @@ class Naprava(models.Model):
       ('edit_naprava', 'Can edit naprava'),
     )  
   
+""" model for comments """  
 class Comment(models.Model):
   comment = models.TextField()
   pub_date = models.DateTimeField( default=datetime.now )
